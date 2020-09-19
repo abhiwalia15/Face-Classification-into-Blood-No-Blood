@@ -244,27 +244,25 @@ def load_image(img):
 ig = Image.open('sample.jpg')
 st.image(ig, width=920)
 
-st.title("BLOOD / NO-BLOOD CLASSIFIER")
+st.title('Blood Detection Classifier')
+
+st.text('Build with Streamlit,Tensorflow, Keras and OpenCV By Mrinal Walia')
 
 st.header("Select the options from sidebar: ")
 
-st.subheader("The ........................")
+st.subheader("Image Detection: For uploading an Image")
 
-st.subheader(".............................")
+st.subheader("Video Detection: For opening the webcam and checking the results")
 
-st.markdown("........................")
+st.subheader("Performance Metrics: To check various performance metrices")
 
 st.header("THANKS FOLKS!!")
 
 st.subheader("Happy Learning")
 
-st.subheader("Creator: MRINAL WALIA😈😈😈")
+st.subheader("Creator: @MRINAL WALIA")
 
-st.header('Article Link: https://datascienceplus.com/real-time-national-stock-exchange-nse-of-india-close-price-stocks-predictions-in-python/')
-st.header('Source Code Link: https://github.com/abhiwalia15/AI-for-Finance-Stocks-real-time-analysis-')
-
-st.title('Blood Detection Classifier')
-st.text('Build with Streamlit,Tensorflow, Keras and OpenCV By Mrinal Walia')
+st.header('Source Code Link: https://github.com/abhiwalia15/Face-Classification-into-Blood-No-Blood')
 
 def main():
 
@@ -283,10 +281,19 @@ def main():
         st.subheader('**Blood Detection**')
         videopreds()
 
-    elif choice == 'About':
-        st.subheader('About')
-        st.info('Hello MotherFuckers')
-
+    elif choice == 'Perofrmance Metrics':
+    
+        st.subheader('About Performance Metrics')
+        
+        cr = Image.open('Results/classification_report.png')
+	st.image(cr, width=320)
+	
+	cm = Image.open('Results/confusion_matrix.png')
+	st.image(cm, width=320)
+	
+	as = Image.open('Results/accuracy_score.png')
+	st.image(as, width=320)
+   
 
 # driver code
 if __name__ == '__main__':
