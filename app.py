@@ -266,34 +266,35 @@ st.header('Source Code Link: https://github.com/abhiwalia15/Face-Classification-
 
 def main():
 
-    menu = ['Image Detection', 'Video Detection', 'About']
-    choice = st.sidebar.selectbox('Menu',menu)
+	menu = ['Image Detection', 'Video Detection', 'About']
+	choice = st.sidebar.selectbox('Menu',menu)
 
-    if choice == 'Image Detection':
-        st.subheader('**Blood Detection**')
-        img_file_buffer = st.file_uploader("Upload an image")
-        if img_file_buffer is not None:
-            image = Image.open(img_file_buffer)
-            img_array = np.array(image)
-            imagepreds(img_array)
+	if choice == 'Image Detection':
+		st.subheader('**Blood Detection**')
+		img_file_buffer = st.file_uploader("Upload an image")
+		
+	if img_file_buffer is not None:
+		image = Image.open(img_file_buffer)
+		img_array = np.array(image)
+		imagepreds(img_array)
 
-    elif choice == 'Video Detection':
-        st.subheader('**Blood Detection**')
-        videopreds()
+	elif choice == 'Video Detection':
+		st.subheader('**Blood Detection**')
+		videopreds()
 
-    elif choice == 'Perofrmance Metrics':
-    
-        st.subheader('About Performance Metrics')
-        
-        cr = Image.open('Results/classification_report.png')
-	st.image(cr, width=320)
-	
-	cm = Image.open('Results/confusion_matrix.png')
-	st.image(cm, width=320)
-	
-	as = Image.open('Results/accuracy_score.png')
-	st.image(as, width=320)
-   
+	elif choice == 'Perofrmance Metrics':
+
+		st.subheader('About Performance Metrics')
+
+		cr = Image.open('Results/classification_report.png')
+		st.image(cr, width=320)
+
+		cm = Image.open('Results/confusion_matrix.png')
+		st.image(cm, width=320)
+
+		acs = Image.open('Results/accuracy_score.png')
+		st.image(acs, width=320)
+
 
 # driver code
 if __name__ == '__main__':
